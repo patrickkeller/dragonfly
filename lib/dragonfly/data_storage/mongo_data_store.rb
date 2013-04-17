@@ -38,7 +38,8 @@ module Dragonfly
         content_type = opts[:content_type] || opts[:mime_type] || 'application/octet-stream'
         temp_object.file do |f|
           mongo_id = grid.put(f, :content_type => content_type,
-                                 :metadata => marshal_encode(temp_object.meta))
+                                 :metadata => marshal_encode(temp_object.meta),
+                                 :filename => temp_object.name)
           mongo_id.to_s
         end
       end
