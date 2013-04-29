@@ -7,9 +7,9 @@ module Dragonfly
       include Shell
       include Loggable
       include Configurable
-      configurable_attr :convert_command, "convert"
-      configurable_attr :identify_command, "identify"
-    
+      configurable_attr :convert_command, "/usr/bin/convert"
+      configurable_attr :identify_command, "/usr/bin/identify"
+      
       private
 
       def convert(temp_object=nil, args='', format=nil)
