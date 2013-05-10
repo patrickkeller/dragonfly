@@ -3,7 +3,6 @@ require 'mongo'
 module Dragonfly
   module DataStorage
     class MongoDataStore
-      before_filter :user_signed_in?
 
       include Configurable
       include Serializer
